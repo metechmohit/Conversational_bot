@@ -128,5 +128,6 @@ if prompt := st.chat_input("Ask about Politics, History, etc."):
     
     with st.chat_message("assistant"):
         st.markdown(bot_response)
+        st.caption(f"History: {history_str}")
         st.caption(f"Expanded Query: {expanded_query}")
         st.caption(f"Predicted Topic: {predicted_topic} (Confidence: {confidence:.2f})")
