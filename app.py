@@ -84,7 +84,7 @@ if "messages" not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-        if message["role"] == "assistant":
+        if message["role"] == "bot":
             st.caption(f"Expanded Query: {message['expansion']}")
             st.caption(f"Predicted Topic: {message['topic']}")
 
@@ -119,14 +119,14 @@ if prompt := st.chat_input("Ask about Politics, History, etc."):
 
     # Add bot response to session state and display
     bot_message = {
-        "role": "assistant", 
+        "role": "bot", 
         "content": bot_response,
         "expansion": expanded_query, 
         "topic": f"{predicted_topic} (Confidence: {confidence:.2f})"
     }
     st.session_state.messages.append(bot_message)
     
-    with st.chat_message("assistant"):
+    with st.chat_message("bot"):
         st.markdown(bot_response)
         st.caption(f"History: {history_str}")
         st.caption(f"Expanded Query: {expanded_query}")
