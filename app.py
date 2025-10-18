@@ -70,7 +70,6 @@ with st.sidebar:
 # Load models
 try:
     expansion_pipeline, classification_pipeline = load_models()
-    st.success("Local models loaded successfully!")
 except Exception as e:
     st.error(f"Error loading Hugging Face models: {e}")
     st.stop()
