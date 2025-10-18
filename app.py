@@ -100,7 +100,7 @@ if prompt := st.chat_input("Ask about Politics, History, etc."):
     with st.spinner("Analyzing your query..."):
         
         # CONTEXT WINDOW 
-        history_messages = st.session_state.messages[-21:-1] # Get 10 previous messages (excluding current)
+        history_messages = st.session_state.messages[-11:-1] # Get 5 previous messages (excluding current)
         history_str = format_history(history_messages)
         t5_input = f"history: {history_str} query: {prompt}"
         expanded_query = expansion_pipeline(t5_input, max_new_tokens=256)[0]['generated_text']
