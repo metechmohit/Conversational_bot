@@ -34,7 +34,7 @@ def get_openai_response(api_key, query):
         openai.api_key = api_key
         
         response = openai.chat.completions.create(
-            model="gpt-3.5-turbo", # Efficient and cost-effective model
+            model="gpt-4.1-mini", 
             messages=[
                 {
                     "role": "system", 
